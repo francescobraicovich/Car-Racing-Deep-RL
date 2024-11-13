@@ -1,5 +1,3 @@
-# Car-Racing-Deep-RL
-
 # Car Racing with Deep Reinforcement Learning
 
 This project implements a Deep Q-Learning (DQN) agent to play the CarRacing-v3 environment from OpenAI Gymnasium.
