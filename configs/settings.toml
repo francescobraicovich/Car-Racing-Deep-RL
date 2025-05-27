@@ -1,0 +1,55 @@
+# Configuration file for Car Racing DQN Agent
+
+[environment]
+env_name = "CarRacing-v3" # Gymnasium environment name
+render_mode_train = "rgb_array" # "human" or "rgb_array"
+render_mode_watch = "human"
+shape_h = 84 # Observation height
+shape_w = 84 # Observation width
+grayscale = true
+skip_frames = 2 # Number of frames to skip
+stack_size = 4 # Number of frames to stack for state representation
+
+[agent]
+gamma = 0.99 # Discount factor for future rewards
+learning_rate = 0.0001
+# Epsilon parameters for epsilon-greedy exploration
+eps_start = 0.4 # Initial epsilon value
+eps_end = 0.01 # Minimum epsilon value
+eps_decay_rate = 0.997 # Multiplicative factor for epsilon decay per episode
+# For linear decay, you might use: eps_decay_episodes = 1000
+
+# Replay buffer settings
+buffer_size = 30000 # Max replay buffer size (e.g., 3e4)
+batch_size = 64  # Batch size for learning
+
+# Target network update frequency
+# Update target network every C steps of learning (agent.step calls)
+# Or, could be every N episodes. For now, based on t_step in agent.py
+# Original agent.py had t_step % 10000 == 0 for target update.
+# This is roughly target_update_freq_steps = 10000 (agent steps)
+# If an episode is ~300 steps, this is ~33 episodes.
+target_update_freq_agent_steps = 10000
+
+[training]
+num_episodes = 1 # Total number of episodes to train
+max_steps_per_episode = 2 # Maximum timesteps per episode
+seed = 1 # Global random seed
+
+# Device configuration: "auto", "cpu", "cuda", "mps"
+device = "mps"
+
+# Model saving
+model_save_freq_episodes = 100 # Save the model every N episodes
+load_model_on_startup = true # Whether to load a pre-trained model
+model_load_episode_num = 2100 # Specific episode number to load (if load_model_on_startup is true)
+output_dir = "output" # Directory for all outputs
+model_dir = "trained_models" # Subdirectory for trained models (relative to output_dir)
+
+[evaluation] # For watching or evaluating agent
+watch_episodes = 5
+watch_max_steps = 1000
+watch_epsilon = 0.0 # Epsilon for watching (usually deterministic)
+watch_time_limit_secs = 60 # Time limit for watching an episode
+frame_delay = 0.03
+
