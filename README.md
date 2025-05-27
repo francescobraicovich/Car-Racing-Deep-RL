@@ -1,3 +1,5 @@
+![Car Racing Agent Demo](assets/car_racing.gif)
+
 # Deep Q-Learning Agent for CarRacing-v3
 
 This project implements a Deep Q-Network (DQN) agent to learn and play the CarRacing-v3 environment from OpenAI Gymnasium, utilizing PyTorch. The agent learns to drive a car around a randomly generated racetrack by processing visual input.
