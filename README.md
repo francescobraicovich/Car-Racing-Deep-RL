@@ -103,21 +103,3 @@ The primary configuration file is `configs/settings.toml`. It is organized into 
 -   `[evaluation]`: Settings for watching/evaluating the agent.
 
 Refer to the comments within `settings.toml` for details on each parameter.
-
-## Testing
-
-(Placeholder)
-To run tests in the future:
-```bash
-# pytest tests/
-```
-
-## License
-
-(Placeholder - e.g., MIT License)
-
-## Acknowledgements
-
-(Placeholder - e.g., Based on or inspired by...)
-
-```
