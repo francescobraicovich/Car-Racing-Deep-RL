@@ -1,4 +1,6 @@
-![Car Racing Agent Demo](assets/car_racing.gif)
+<p align="center">
+  <img src="assets/car_racing.gif" width="400"/>
+</p>
 
 # Deep Q-Learning Agent for CarRacing-v3
 
